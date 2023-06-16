@@ -43,7 +43,9 @@ public final class CommissionEmployee extends Employee {
      */
     public void increaseSales(double s)
     {
-        sales += s;
+        if (s > 0) {
+            sales += s;
+        }
     }
 
     /**
@@ -59,7 +61,7 @@ public final class CommissionEmployee extends Employee {
      * @return a double for the rate
      */
     public double getRate() {
-        return rate;
+        return (double)Math.round(rate * 10000) / 10000;
     }
 
     /**
